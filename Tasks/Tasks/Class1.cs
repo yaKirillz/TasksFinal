@@ -44,6 +44,48 @@ namespace Tasks
             Console.WriteLine();
             Console.WriteLine($"Количество денег,которые принесет ваш вклад за 1 месяц = {X * ((Y / 100) / 12)} ");
         }
+
+        public void FourthTask() 
+        {   // Число А
+            decimal A = 0;
+            Console.Write("Введите число A: ");
+            A = Convert.ToDecimal(Console.ReadLine());
+
+            while (A == 0)
+            {
+                Console.WriteLine("Пожалуйста введите число отличное от нуля " );
+                A = Convert.ToDecimal(Console.ReadLine());
+            }
+
+            // Число В
+            decimal B = 0;
+            Console.Write("Введите число B: ");
+            B = Convert.ToDecimal(Console.ReadLine());
+
+            while (B == 0)
+            {
+                Console.WriteLine("Пожалуйста введите число отличное от нуля ");
+                B = Convert.ToDecimal(Console.ReadLine());
+            }
+
+            // Число С
+            decimal C = 0;
+            Console.Write("Введите число C: ");
+            C = Convert.ToDecimal(Console.ReadLine());
+
+            while (C == 0)
+            {
+                Console.WriteLine("Пожалуйста введите число отличное от нуля ");
+                C = Convert.ToDecimal(Console.ReadLine());
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Вычисляю...");
+            Console.WriteLine();
+            Console.WriteLine($"Ваш X линейного уравнения A*X+B = C равняется {(C-B)/A}");
+
+
+        }
     }
 
 
