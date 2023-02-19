@@ -7,7 +7,7 @@ namespace Tasks
         static void Main()
         {
             Class1 foo = new Class1();
-            foo.SecondTask();
+            foo.ThirdTask();
 
         }
     }
