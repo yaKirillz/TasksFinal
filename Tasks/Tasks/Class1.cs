@@ -86,6 +86,20 @@ namespace Tasks
 
 
         }
+        public void FifthTask()
+        {
+            Console.WriteLine("Что такое A?");
+            string A = Console.ReadLine();
+
+            Console.WriteLine("Что такое B?");
+            string B = Console.ReadLine();
+
+            (A, B) = (B, A);
+
+            Console.WriteLine($"неа, А это теперь {A}, а вот В это {B}");
+        }
+
+
     }
 
 
