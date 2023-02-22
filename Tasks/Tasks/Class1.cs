@@ -98,7 +98,24 @@ namespace Tasks
 
             Console.WriteLine($"неа, А это теперь {A}, а вот В это {B}");
         }
+        // Ветвление 3 задача
+        public void SixthTask() 
+        {
+            Console.WriteLine("Ведите число A:");
+            int A = Convert.ToInt32(Console.ReadLine());
 
+            Console.WriteLine("Ведите число B:");
+            int B = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Ведите число C:");
+            int C = Convert.ToInt32(Console.ReadLine());
+            int[] nums = { A, B, C };
+            Array.Sort(nums);
+            Console.WriteLine("Числа в порядке возрастания: ");
+            foreach (int num in nums) 
+                Console.WriteLine(num);
+
+        }
 
     }
 
