@@ -178,7 +178,7 @@ namespace Tasks
             Console.WriteLine("Ведите число B:");
             int B = Convert.ToInt32(Console.ReadLine());
 
-            for (int i = A+1; i < B; i++) 
+            for (int i = A + 1; i < B; i++)
             {
                 int temp = i;
                 int odd = 0;
@@ -191,20 +191,51 @@ namespace Tasks
                     {
                         even += num1;
                     }
-                    else 
+                    else
                     {
                         odd += num1;
                     }
                     temp /= 10;
                 }
-                if (even > odd) 
+                if (even > odd)
                 {
                     Console.WriteLine($"Суммы четных цифр в это числе, больше чем сумма нечётных: {i}");
                 }
-            } 
+            }
+        }
+        // Отразите массив относительно его главной диагонали (на вход приходит квадрат)
+        public void NinthTask()
+        {
+            int[,] Matrix =
+            {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+             };
+            for (int y=0; y < Matrix.GetLength(0); y++) 
+            
+            {
+                for (int x = 0; x < Matrix.GetLength(1); x++) 
+                {
+                    Console.Write(Matrix[y, x] + "\t");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("Отразил");
+            (Matrix[0, 1], Matrix[1, 0]) = (Matrix[1, 0], Matrix[0, 1]);
+            (Matrix[0, 2], Matrix[2, 0]) = (Matrix[2, 0], Matrix[0, 2]);
+            (Matrix[1, 2], Matrix[2, 1]) = (Matrix[2, 1], Matrix[1, 2]);
+            for (int y = 0; y < Matrix.GetLength(0); y++)
 
-
+            {
+                for (int x = 0; x < Matrix.GetLength(1); x++)
+                {
+                    Console.Write(Matrix[y, x] + "\t");
+                }
+                Console.WriteLine();
+            }
 
         }
+
     }
 }
