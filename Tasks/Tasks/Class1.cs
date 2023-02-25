@@ -42,7 +42,7 @@ namespace Tasks
             Console.WriteLine();
             Console.WriteLine("Вычисляю...");
             Console.WriteLine();
-            Console.WriteLine($"Количество денег,которые принесет ваш вклад за 1 месяц = {X * ((Y / 100) / 12)} ");
+            Console.WriteLine($"Количество денег,которые принесет ваш вклад за 1 месяц = {X * ((Y / 100m) / 12m)} ");
         }
 
         public void FourthTask()
@@ -128,13 +128,13 @@ namespace Tasks
                 }
 
             }
-            else 
+            else
             {
                 if (C > B)
                 {
                     Console.WriteLine($"{A}, {B}, {C}");
                 }
-                else 
+                else
                 {
                     if (C > A)
                         Console.WriteLine($"{A}, {C}, {B}");
@@ -168,10 +168,43 @@ namespace Tasks
             {
                 Console.Write(el2);
             }
+        }
+        //Пользователь вводит целые положительные  числа(A, B). Выведите числа в диапазоне от A до B, сумма четных цифр которых больше суммы нечетных.
+        public void EighthTask()
+        {
+            Console.WriteLine("Ведите число A:");
+            int A = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Ведите число B:");
+            int B = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = A+1; i < B; i++) 
+            {
+                int temp = i;
+                int odd = 0;
+                int even = 0;
+
+                while (temp > 0)
+                {
+                    int num1 = temp % 10;
+                    if (num1 % 2 == 0)
+                    {
+                        even += num1;
+                    }
+                    else 
+                    {
+                        odd += num1;
+                    }
+                    temp /= 10;
+                }
+                if (even > odd) 
+                {
+                    Console.WriteLine($"Суммы четных цифр в это числе, больше чем сумма нечётных: {i}");
+                }
+            } 
 
 
 
         }
     }
-
 }
