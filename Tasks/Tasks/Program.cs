@@ -7,8 +7,15 @@ namespace Tasks
         static void Main()
         {
             Class1 foo = new Class1();
-            foo.SixthTask();
-
+            //foo.FirstTask();
+            //foo.SecondTask();
+            //foo.ThirdTask();
+            //foo.FourthTask();
+            //foo.FifthTask();
+            //foo.SixthTask();
+            //foo.SeventhTask();
+            //foo.EighthTask();
+            foo.NinthTask();
         }
     }
 }
