@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace Tasks
 {
@@ -147,26 +148,28 @@ namespace Tasks
         //Поменять местами первую и вторую половину массива, например, для массива 1 2 3 4, результат 3 4 1 2,  или для 12345 - 45312
         public void SeventhTask()
         {
-            int[] numbers = { 1, 2, 3, 5 };
+            int[] numbers = { 1, 2, 3, 4};
+
+            Shownumbers(numbers);
+
+            Console.WriteLine();
+            int b = numbers.Length/2;
+            if (numbers.Length % 2 == 1)
+            {
+                b += 1;
+            }
+
+           for (int x = 0; x < numbers.Length/2; x++)
+            {
+              (numbers[x], numbers[b + x]) = (numbers[b + x], numbers[x]);
+            }
+            Shownumbers(numbers);
+        }
+        public void Shownumbers(int[] numbers) 
+        {
             foreach (int el1 in numbers)
             {
                 Console.Write(el1);
-            }
-            Console.WriteLine();
-            /*numbers[0] = 3;
-            numbers[1] = 5;
-            numbers[2] = 1;
-            numbers[3] = 2;
-            foreach(int el2 in numbers) 
-            {
-                Console.Write(el2);
-            }
-            */
-            (numbers[0], numbers[2]) = (numbers[2], numbers[0]);
-            (numbers[1], numbers[3]) = (numbers[3], numbers[1]);
-            foreach (int el2 in numbers)
-            {
-                Console.Write(el2);
             }
         }
         //Пользователь вводит целые положительные  числа(A, B). Выведите числа в диапазоне от A до B, сумма четных цифр которых больше суммы нечетных.
@@ -212,21 +215,29 @@ namespace Tasks
                 {4, 5, 6},
                 {7, 8, 9}
              };
-            for (int y=0; y < Matrix.GetLength(0); y++) 
-            
+
+            ShowMatrix(Matrix);
+
+            Console.WriteLine("Отразил");
+
+            for (int y = 0; y < Matrix.GetLength(0); y++)
             {
-                for (int x = 0; x < Matrix.GetLength(1); x++) 
-                {
+                for (int x = 0; x < Matrix.GetLength(1); x++)
+                {   
+                    if (x > y) 
+                    {
+                      (Matrix[x,y], Matrix[y, x]) = (Matrix[y, x], Matrix[x, y]);
+                    }
                     Console.Write(Matrix[y, x] + "\t");
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine("Отразил");
-            (Matrix[0, 1], Matrix[1, 0]) = (Matrix[1, 0], Matrix[0, 1]);
-            (Matrix[0, 2], Matrix[2, 0]) = (Matrix[2, 0], Matrix[0, 2]);
-            (Matrix[1, 2], Matrix[2, 1]) = (Matrix[2, 1], Matrix[1, 2]);
-            for (int y = 0; y < Matrix.GetLength(0); y++)
 
+        }
+
+        public void ShowMatrix(int[,] Matrix) 
+        {
+            for (int y = 0; y < Matrix.GetLength(0); y++)
             {
                 for (int x = 0; x < Matrix.GetLength(1); x++)
                 {
@@ -236,6 +247,6 @@ namespace Tasks
             }
 
         }
-
+        
     }
 }
