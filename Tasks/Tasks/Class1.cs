@@ -247,6 +247,32 @@ namespace Tasks
             }
 
         }
-        
+
+        public void TenthTask()
+        {
+            int[] Array = { 1, 2, 3, 4};
+
+            ShowArray(Array);
+
+            Console.WriteLine();
+            int b = Array.Length;
+
+            for (int x = 0; x < Array.Length / 2; x++)
+            {
+                (Array[x], Array[b - x - 1]) = (Array[b - x - 1], Array[x]);
+                
+            }
+            ShowArray(Array);
+            
+        }
+        public void ShowArray(int[] Array)
+        {
+            foreach (int el1 in Array)
+            {
+                Console.Write(el1);
+            }
+        }
+
+
     }
 }

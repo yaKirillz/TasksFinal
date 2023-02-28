@@ -13,9 +13,10 @@ namespace Tasks
             //foo.FourthTask();
             //foo.FifthTask();
             //foo.SixthTask();
-            foo.SeventhTask();
+            //foo.SeventhTask();
             //foo.EighthTask();
             //foo.NinthTask();
+            foo.TenthTask();
         }
     }
 }
